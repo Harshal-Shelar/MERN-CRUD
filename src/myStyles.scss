@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;400&display=swap");
+
+body {
+    margin: 0;
+    background-color: rgb(23, 23, 23);
+}
+
+* {
+    font-family: 'Rubik', sans-serif;
+}
+
+// Add and Edit User form
+
+h2 {
+    margin: 2rem auto;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    text-shadow: 0px 1px 15px rgba(0, 168, 255, 1);
+}  
+
+.mainForm {
+    width: 700px;
+    background-image: linear-gradient(to right, rgb(0, 47, 122), rgba(0, 168, 255, 1));
+    box-shadow: 5px 5px 10px 1px rgb(0, 0, 0);
+    margin: 2rem auto 0;
+    border-radius: 15px;
+    padding: 2rem;
+
+
+    .labelInput {
+        display: grid;
+        margin: 1rem 0;
+
+        label {
+            font-size: 18px;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+            color: white;
+        }
+
+        input {
+            height: 2rem;
+            border-radius: 3px;
+            border: none;
+            width: 100%;
+            letter-spacing: 1px;
+            font-weight: bold;
+            padding-left: 0.5rem;
+        }
+
+        input:focus {
+            box-shadow: 0px 0px 10px 2px rgb(0, 110, 255);
+        }
+    }
+
+    .submitBtn {
+        text-align: right;
+        margin-top: 2rem;
+
+        .btnSubmit {
+            padding: 0.8rem 2rem;
+            border-radius: 10px;
+            border: 1px solid rgb(0, 33, 86);
+            background-color: rgb(0, 33, 86);
+            color: white;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .btnSubmit:hover {
+            background-color: rgb(1, 16, 41);
+            box-shadow: 0px 0px 10px 2px black;
+            transition: 0.5s;
+        }
+    }
+}
+
+.mainTable {
+    margin: 2rem auto;
+    width: fit-content;
+    text-align: center;
+
+    table {
+        margin-top: 2rem;
+        width: fit-content;
+        padding: 1rem;
+        height: fit-content;
+        border-radius: 15px;
+        background-color: black;
+
+        thead {
+           
+            tr {
+                border:1px solid gray;
+
+                th {
+                    color: white;
+                    text-align: left;
+                    padding: 0 3rem 1rem 0;
+                    font-size: 20px;
+                    letter-spacing: 1px;
+                    border-bottom:1px solid gray;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                td {
+                    color: white;
+                    padding: 1rem 3rem 0 0;
+                    font-size: 18px;
+                    letter-spacing: 1px;
+                    text-align: left;
+                    align-items: center;
+                    text-wrap: nowrap;
+                }
+
+                .actionsBtns {
+                    display: flex;
+                    gap: 1rem;
+                    padding-right: 0;
+
+                    .editBtn,
+                    .deleteBtn {
+                        border-radius: 5px;
+                        color: white;
+                        padding: 0.6rem 2rem;
+                        cursor: pointer;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                        font-size: 16px;
+                    }
+
+                    .editBtn {
+                        background-color: rgb(0, 98, 255);
+                        border: 2px solid rgb(0, 98, 255);
+                    }
+
+                    .editBtn:hover {
+                        box-shadow: 0px 0px 10px 3px rgb(0, 98, 255);
+                        background-color: black;
+                        transition: 0.5s;
+                    }
+
+                    .deleteBtn {
+                        background-color: red;
+                        border: 2px solid red;
+                    }
+
+                    .deleteBtn:hover {
+                        box-shadow: 0px 0px 10px 3px red;
+                        background-color: black;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mainHeader {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: rgb(23, 23, 23);
+    padding: 1rem 0;
+    width: 100%;
+    margin: 0;
+    box-shadow: 5px 5px 10px 2px black;
+
+    .navLinks {
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        letter-spacing: 1px;
+    }
+
+    .navLinks:hover {
+        text-shadow: 0px 1px 15px rgb(0, 98, 255);
+        transition: 0.5s;
+    }
+}

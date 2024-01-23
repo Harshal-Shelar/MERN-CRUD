@@ -1,60 +1,55 @@
-import react, { useState } from 'react';
-import { FormGroup, FormControl, InputLabel, Input, Button, styled, Typography } from '@mui/material';
-import { addUser } from '../Service/api';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { addUser } from '../Service/api';
 
 const initialValue = {
     name: '',
     username: '',
     email: '',
-    phone: ''
+    phone: '',
 }
-
-const Container = styled(FormGroup)`
-    width: 50%;
-    margin: 5% 0 0 25%;
-    & > div {
-        margin-top: 20px;
-`;
 
 const AddUser = () => {
     const [user, setUser] = useState(initialValue);
     const { name, username, email, phone } = user;
-    
+
     let navigate = useNavigate();
 
     const onValueChange = (e) => {
-        setUser({...user, [e.target.name]: e.target.value})
+        setUser({ ...user, [e.target.name]: e.target.value })
     }
 
-    const addUserDetails = async() => {
+    const addUserDetails = async () => {
         await addUser(user);
         navigate('/all');
     }
 
     return (
-        <Container>
-            <Typography variant="h4">Add User</Typography>
-            <FormControl>
-                <InputLabel htmlFor="my-input">Name</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='name' value={name} id="my-input" />
-            </FormControl>
-            <FormControl>
-                <InputLabel htmlFor="my-input">Username</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='username' value={username} id="my-input" />
-            </FormControl>
-            <FormControl>
-                <InputLabel htmlFor="my-input">Email</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='email' value={email} id="my-input"/>
-            </FormControl>
-            <FormControl>
-                <InputLabel htmlFor="my-input">Phone</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='phone' value={phone} id="my-input" />
-            </FormControl>
-            <FormControl>
-                <Button variant="contained" color="primary" onClick={() => addUserDetails()}>Add User</Button>
-            </FormControl>
-        </Container>
+        <div>
+            <h2>Add New User</h2>
+            <div className='mainForm'>
+                <div className='labelInput'>
+                    <label htmlFor="my-input">Name : </label>
+                    <input placeholder='Enter Name' type="text" name="name" value={name} id='my-input' onChange={(e) => onValueChange(e)} />
+                </div>
+                <div className='labelInput'>
+                    <label htmlFor="my-input">Technology : </label>
+                    <input placeholder='Enter Technology' type="text" name="username" value={username} id='my-input' onChange={(e) => onValueChange(e)} />
+                </div>
+                <div className='labelInput'>
+                    <label htmlFor="my-input">Email : </label>
+                    <input placeholder='Enter Email' type="text" name="email" value={email} id='my-input' onChange={(e) => onValueChange(e)} />
+                </div>
+                <div className='labelInput'>
+                    <label htmlFor="my-input">Phone : </label>
+                    <input placeholder='Enter Phone' type="text" name="phone" value={phone} id='my-input' onChange={(e) => onValueChange(e)} />
+                </div>
+                <div className="submitBtn">
+                    <button className='btnSubmit' onClick={() => addUserDetails()}>Submit</button>
+                </div>
+            </div>
+        </div>
+
     )
 }
 

@@ -1,0 +1,41 @@
+@media (max-width : 1000px) {
+    .mainTable {
+        width: 90%;
+        overflow: auto;
+
+        table {
+            margin-top: 0rem;
+            box-shadow: none;
+
+            tbody {
+                tr {
+                    td {
+                       padding: 1rem 3rem 1rem 0;
+                    }
+                }
+            }
+        }
+    }
+
+    h2 {
+        font-size: 30px;
+        margin: 2rem auto 0;
+        width: fit-content;
+    }
+
+    .mainForm {
+        width: 70%;
+        overflow: auto;
+        margin: 2rem auto 0;
+    }
+}
+
+@media (max-width : 500px) {
+    .mainForm {
+        .submitBtn {
+            .btnSubmit {
+                width: 100%;
+            }
+        }
+    }
+}

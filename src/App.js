@@ -2,7 +2,9 @@ import AllUsers from './Component/AllUsers';
 import AddUser from './Component/AddUser';
 import EditUser from './Component/EditUser';
 import NavBar from './Component/NavBar';
-import NotFound from './Component/NotFound';
+import './myStyles.scss';
+import './responsive.scss';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -10,10 +12,10 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path="all" element={<AllUsers /> } />
-        <Route path="/add" element={<AddUser />} />
-        <Route path="/edit/:id" element={<EditUser />} />
-        <Route path='/*' element={<AllUsers />} />
+        <Route exact path="all" element={<AllUsers /> } />
+        <Route exact path="/add" element={<AddUser />} />
+        <Route exact path="/edit/:id" element={<EditUser />} />
+        <Route exact path='/*' element={<AllUsers />} />
       </Routes>
     </BrowserRouter>
   );
