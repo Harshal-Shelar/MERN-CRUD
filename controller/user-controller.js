@@ -1,6 +1,5 @@
 import User from '../model/user.js';
 
-// Get all users
 export const getUsers = async (request, response) => {
     try{
         const users = await User.find();
@@ -10,7 +9,6 @@ export const getUsers = async (request, response) => {
     }
 }
 
-// Save data of the user in database
 export const addUser = async (request, response) => {
     const user = request.body;
     
@@ -23,7 +21,6 @@ export const addUser = async (request, response) => {
     }
 }
 
-// Get a user by id
 export const getUserById = async (request, response) => {
     try{
         const user = await User.findById(request.params.id);
@@ -33,7 +30,6 @@ export const getUserById = async (request, response) => {
     }
 }
 
-// Save data of edited user in the database
 export const editUser = async (request, response) => {
     let user = request.body;
 
@@ -46,7 +42,6 @@ export const editUser = async (request, response) => {
     }
 }
 
-// deleting data of user from the database
 export const deleteUser = async (request, response) => {
     try{
         await User.deleteOne({_id: request.params.id});
